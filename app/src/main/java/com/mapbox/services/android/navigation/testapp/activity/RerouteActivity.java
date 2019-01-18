@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.view.View;
-import android.widget.Toast;
 
 import com.mapbox.android.core.location.LocationEngineCallback;
 import com.mapbox.android.core.location.LocationEngineResult;
@@ -94,10 +93,10 @@ public class RerouteActivity extends HistoryActivity implements OnMapReadyCallba
     navigation.addMilestoneEventListener(this);
     addNavigationForHistory(navigation);
 
-    instructionView.retrieveSoundButton().show();
-    instructionView.retrieveSoundButton().addOnClickListener(
-      v -> Toast.makeText(RerouteActivity.this, "Sound button clicked!", Toast.LENGTH_SHORT).show()
-    );
+//    instructionView.retrieveSoundButton().show();
+//    instructionView.retrieveSoundButton().addOnClickListener(
+//      v -> Toast.makeText(RerouteActivity.this, "Sound button clicked!", Toast.LENGTH_SHORT).show()
+//    );
   }
 
   @Override

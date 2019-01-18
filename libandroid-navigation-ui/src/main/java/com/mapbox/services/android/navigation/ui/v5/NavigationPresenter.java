@@ -13,6 +13,7 @@ class NavigationPresenter {
 
   private NavigationContract.View view;
   private boolean resumeState;
+  private boolean isRerouting;
 
   NavigationPresenter(NavigationContract.View view) {
     this.view = view;
@@ -85,5 +86,21 @@ class NavigationPresenter {
     view.updateWayNameVisibility(false);
     view.updateCameraRouteOverview();
     view.showRecenterBtn();
+  }
+
+  public void onSoundClick() {
+    view.toggleMuted();
+  }
+
+  public void onFeedbackClick() {
+    view.showFeedbackBottomSheet();
+  }
+
+  public void onIsOffRouteChange(Boolean isOffRoute) {
+    if (isOffRoute != null && !isOffRoute && isRerouting) {
+      view.showReportProblem();
+    }
+
+    isRerouting = isOffRoute;
   }
 }
